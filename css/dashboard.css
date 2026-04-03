@@ -82,8 +82,19 @@ body.dashboard-body {
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backdrop-filter: none;
     backdrop-filter: none; /* Fixed: override global header blur */
-    z-index: 10;
+    z-index: 100;
+}
+
+#dash-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 15px;
 }
 
 .header-search {
@@ -214,17 +225,63 @@ body.dashboard-body {
     margin-bottom: 20px;
 }
 
+/* Activity Table */
+.activity-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.activity-table th {
+    padding: 15px;
+    border-bottom: 2px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.activity-table td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status-success { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.status-completed { background: rgba(99, 102, 241, 0.1); color: var(--accent-primary); }
+.status-recent { background: rgba(245, 158, 11, 0.1); color: var(--accent-secondary); }
+
+.btn-action {
+    height: 32px;
+    font-size: 0.85rem;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
 /* Responsive Dashboard */
 @media (max-width: 1024px) {
     .metrics-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
+    #dash-hamburger {
+        display: flex;
+    }
+
     .sidebar {
         position: fixed;
         left: -100%;
         height: 100%;
         width: 100%; /* Mobile full screen sidebar */
+        z-index: 1001; /* Above header */
     }
     
     .sidebar.open {
@@ -234,6 +291,83 @@ body.dashboard-body {
     .metrics-grid { grid-template-columns: 1fr; }
     
     .header-search { display: none; }
+    
+    .dashboard-header {
+        padding: 0 15px;
+    }
+
+    /* Center Content */
+    .dashboard-content {
+        text-align: center;
+    }
+
+    .dashboard-content h1, 
+    .dashboard-content p {
+        text-align: center;
+    }
+
+    /* Stack & Center Metrics */
+    .metric-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+    .metric-info h4 {
+        text-align: center;
+    }
+
+    /* Stack & Center Table */
+    .activity-table thead {
+        display: none;
+    }
+
+    .activity-table tr {
+        display: block;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+
+    .activity-table td {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 12px 0;
+        border-bottom: 1px dashed var(--border-color);
+    }
+
+    .activity-table td:last-child {
+        border-bottom: none;
+        padding-top: 15px;
+    }
+
+    .activity-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-action {
+        width: 100%;
+        height: 42px;
+    }
+
+    /* Center Cards */
+    .card {
+        text-align: center;
+    }
+
+    .btn-center {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 /* Center per request */
