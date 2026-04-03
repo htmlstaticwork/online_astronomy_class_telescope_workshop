@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Materials | Astronomy Academy</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="logo">
+                <i data-lucide="orbit"></i>
+                ASCLOGY
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Overview</a>
+            <a href="sessions.html" class="nav-item"><i data-lucide="video"></i> Sessions</a>
+            <a href="materials.html" class="nav-item active"><i data-lucide="book-open"></i> Materials</a>
+            <a href="logs.html" class="nav-item"><i data-lucide="activity"></i> Observing Logs</a>
+            <a href="settings.html" class="nav-item"><i data-lucide="settings"></i> Settings</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../login.html" class="nav-item" style="color: #ef4444;"><i data-lucide="log-out"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div class="header-search"><i data-lucide="search"></i><input type="text" placeholder="Search materials..."></div>
+            <div class="header-actions">
+                <button class="icon-btn"><i data-lucide="bell"></i><span class="notification-badge"></span></button>
+                <button id="dash-theme-toggle" class="theme-toggle"><i data-lucide="moon"></i></button>
+                <div class="profile-trigger"><div class="profile-img">JD</div><span style="font-weight: 600;">John Doe</span></div>
+            </div>
+        </header>
+
+        <section class="dashboard-content">
+            <h1 class="text-center">Study <span style="color: var(--accent-primary);">Resources</span></h1>
+            
+            <!-- Materials Grid -->
+            <div class="grid grid-cols-3 gap-md">
+                
+                <div class="card">
+                    <div style="background: rgba(245, 158, 11, 0.1); width: 100%; height: 120px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--accent-secondary); margin-bottom: 20px;">
+                        <i data-lucide="file-text" style="width: 48px; height: 48px;"></i>
+                    </div>
+                    <h3>Star Maps (PDF)</h3>
+                    <p style="font-size: 0.9rem;">Complete collection of seasonal star charts for Northern Hemisphere.</p>
+                    <div class="btn-center">
+                        <a href="#" class="btn btn-secondary" style="height: 35px; font-size: 0.85rem;"><i data-lucide="download"></i> Download</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="background: rgba(99, 102, 241, 0.1); width: 100%; height: 120px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: var(--accent-primary); margin-bottom: 20px;">
+                        <i data-lucide="play-circle" style="width: 48px; height: 48px;"></i>
+                    </div>
+                    <h3>Astrophotography 101</h3>
+                    <p style="font-size: 0.9rem;">Full video course on editing deep space objects in Photoshop.</p>
+                    <div class="btn-center">
+                        <a href="#" class="btn btn-secondary" style="height: 35px; font-size: 0.85rem;"><i data-lucide="play"></i> Watch Now</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="background: rgba(16, 185, 129, 0.1); width: 100%; height: 120px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #10b981; margin-bottom: 20px;">
+                        <i data-lucide="image" style="width: 48px; height: 48px;"></i>
+                    </div>
+                    <h3>FITS Processing Pack</h3>
+                    <p style="font-size: 0.9rem;">Raw data files to practice your astronomical image processing skills.</p>
+                    <div class="btn-center">
+                        <a href="#" class="btn btn-secondary" style="height: 35px; font-size: 0.85rem;"><i data-lucide="download"></i> Download</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="background: rgba(239, 68, 68, 0.1); width: 100%; height: 120px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: #ef4444; margin-bottom: 20px;">
+                        <i data-lucide="terminal" style="width: 48px; height: 48px;"></i>
+                    </div>
+                    <h3>Remote Control Script</h3>
+                    <p style="font-size: 0.9rem;">Python scripts for automating DSLR exposure and tracking mounts.</p>
+                    <div class="btn-center">
+                        <a href="#" class="btn btn-secondary" style="height: 35px; font-size: 0.85rem;"><i data-lucide="download"></i> Download</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

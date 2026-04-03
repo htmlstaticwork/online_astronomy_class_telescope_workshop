@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Sessions | Astronomy Academy</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="dashboard-body">
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="logo">
+                <i data-lucide="orbit"></i>
+                ASCLOGY
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item"><i data-lucide="layout-dashboard"></i> Overview</a>
+            <a href="sessions.html" class="nav-item active"><i data-lucide="video"></i> Sessions</a>
+            <a href="materials.html" class="nav-item"><i data-lucide="book-open"></i> Materials</a>
+            <a href="logs.html" class="nav-item"><i data-lucide="activity"></i> Observing Logs</a>
+            <a href="settings.html" class="nav-item"><i data-lucide="settings"></i> Settings</a>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="../login.html" class="nav-item" style="color: #ef4444;"><i data-lucide="log-out"></i> Logout</a>
+        </div>
+    </aside>
+
+    <main class="dashboard-main">
+        <header class="dashboard-header">
+            <div class="header-search"><i data-lucide="search"></i><input type="text" placeholder="Search sessions..."></div>
+            <div class="header-actions">
+                <button class="icon-btn"><i data-lucide="bell"></i><span class="notification-badge"></span></button>
+                <button id="dash-theme-toggle" class="theme-toggle"><i data-lucide="moon"></i></button>
+                <div class="profile-trigger"><div class="profile-img">JD</div><span style="font-weight: 600;">John Doe</span></div>
+            </div>
+        </header>
+
+        <section class="dashboard-content">
+            <h1 class="text-center">Live <span style="color: var(--accent-primary);">Telescope</span> Sessions</h1>
+            
+            <!-- Book New Session -->
+            <div class="data-card" style="background: rgba(99, 102, 241, 0.05); border-style: dashed; border-color: var(--accent-primary);">
+                <div class="text-center">
+                    <h3>Book a Personal Session</h3>
+                    <p>Have 30 minutes of exclusive access to a professional remote telescope.</p>
+                    <div class="btn-center">
+                        <a href="#" class="btn btn-primary"><i data-lucide="plus"></i> New Reservation</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Grid -->
+            <h3 style="text-align: left; margin: 30px 0 15px;">Upcoming Group Sessions</h3>
+            <div class="grid grid-cols-2 gap-md">
+                
+                <div class="card" style="text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <span style="padding: 4px 10px; background: rgba(99, 102, 241, 0.1); color: var(--accent-primary); border-radius: 6px; font-size: 0.8rem; font-weight: 700;">LIVE IN 2H</span>
+                        <i data-lucide="more-horizontal" style="color: var(--text-secondary); cursor: pointer;"></i>
+                    </div>
+                    <h4>Orion Nebula Deep Dive</h4>
+                    <p style="font-size: 0.9rem;">Instructor: Dr. Sarah Zenith</p>
+                    <div style="display: flex; gap: 10px; align-items: center; margin: 15px 0;">
+                        <i data-lucide="calendar" style="width: 16px;"></i> Today, 20:30 PM
+                    </div>
+                    <div class="btn-wrapper" style="justify-content: flex-start;">
+                        <a href="#" class="btn btn-primary" style="height: 38px; font-size: 0.9rem;">Remind Me</a>
+                    </div>
+                </div>
+
+                <div class="card" style="text-align: left;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
+                        <span style="padding: 4px 10px; background: var(--bg-secondary); color: var(--text-secondary); border-radius: 6px; font-size: 0.8rem; font-weight: 700;">APRIL 05</span>
+                        <i data-lucide="more-horizontal" style="color: var(--text-secondary); cursor: pointer;"></i>
+                    </div>
+                    <h4>Jupiter & Moons Transit</h4>
+                    <p style="font-size: 0.9rem;">Instructor: Prof. Leo Mars</p>
+                    <div style="display: flex; gap: 10px; align-items: center; margin: 15px 0;">
+                        <i data-lucide="calendar" style="width: 16px;"></i> Sunday, 21:00 PM
+                    </div>
+                    <div class="btn-wrapper" style="justify-content: flex-start;">
+                        <a href="#" class="btn btn-secondary" style="height: 38px; font-size: 0.9rem;">Join Waitlist</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
