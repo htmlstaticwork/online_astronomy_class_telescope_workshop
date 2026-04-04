@@ -55,6 +55,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Req 2: no horizontal scroll */
 }
 
 body {
@@ -63,6 +64,9 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     transition: background-color var(--transition-base), color var(--transition-base);
+    overflow-x: hidden; /* Req 2: no horizontal scroll */
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* Typography */
@@ -102,7 +106,9 @@ p {
 /* Dashboard Per Page/Component grid per instructions */
 .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
 .gap-md { gap: var(--spacing-md); }
+.gap-sm { gap: var(--spacing-sm); }
 
 /* Buttons */
 .btn {
@@ -168,19 +174,22 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 9999; /* Req: always on top during scroll */
     background: var(--header-bg);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     padding: 15px 0;
     transition: background var(--transition-base);
+    box-sizing: border-box;
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
+    overflow: hidden; /* Prevent horizontal overflow from nav icons */
 }
 
 .logo {
@@ -205,10 +214,37 @@ header {
     color: var(--text-primary);
     font-weight: 500;
     transition: color var(--transition-fast);
+    position: relative; /* needed for ::after underline */
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent-primary);
+}
+
+/* Desktop active underline indicator */
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-primary);
+    border-radius: 2px;
+}
+
+/* Mobile drawer active state — left accent border + subtle bg */
+@media (max-width: 1024px) {
+    .nav-links a.active {
+        background: rgba(99, 102, 241, 0.08);
+        border-left: 3px solid var(--accent-primary);
+        padding-left: 17px; /* compensate for border */
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+    .nav-links a.active::after {
+        display: none; /* hide underline in drawer — using border-left instead */
+    }
 }
 
 .nav-actions {
@@ -217,14 +253,28 @@ header {
     gap: var(--spacing-sm);
 }
 
-/* Hamburger for Mobile */
+/* Hamburger for Mobile — icon only, no visible text */
 .hamburger {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--text-primary);
-    z-index: 1001; /* Above mobile menu */
+    z-index: 10000; /* Above nav menu and header */
+    font-size: 0; /* Hide any text nodes */
+    line-height: 0;
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+}
+.hamburger i, .hamburger svg {
+    font-size: initial; /* Restore icon size */
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.hamburger:hover {
+    background: var(--bg-secondary);
 }
 
 .nav-menu {
@@ -251,10 +301,11 @@ footer {
     margin-bottom: var(--spacing-xl);
 }
 
+/* Req 6: Footer dark mode contrast — headings use light color */
 .footer-col h4 {
     text-align: left;
     margin-bottom: var(--spacing-md);
-    color: var(--bg-primary);
+    color: #f8fafc; /* Always light on footer's dark bg */
 }
 
 .footer-links {
@@ -265,14 +316,33 @@ footer {
     margin-bottom: 12px;
 }
 
+/* Req 6 & 7: Footer links — high contrast + transition + cursor + hover accent */
 .footer-links a {
-    color: var(--text-secondary);
+    color: #e2e8f0; /* Req 6: light enough on dark bg */
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: color 0.2s; /* Req 7 */
+    cursor: pointer; /* Req 7 */
 }
 
 .footer-links a:hover {
-    color: var(--accent-primary);
+    color: var(--accent-primary); /* Req 7: brand accent hover */
+}
+
+/* Req 6: Footer paragraph text contrast */
+footer p {
+    color: #e2e8f0;
+}
+
+/* Req 6: footer-bottom links contrast */
+.footer-bottom a {
+    color: #e2e8f0 !important;
+    text-decoration: none;
+    transition: color 0.2s; /* Req 7 */
+    cursor: pointer;
+}
+
+.footer-bottom a:hover {
+    color: var(--accent-primary) !important; /* Req 7 */
 }
 
 .footer-bottom {
@@ -281,6 +351,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
 /* Social Icons Premium Styles */
@@ -367,20 +439,60 @@ footer {
     box-shadow: var(--shadow-lg);
 }
 
-/* Responsive */
+/* ============================================================
+   RESPONSIVE — Tablet (max-width: 1024px)
+   Req 1, 2, 3, 4: centering, overflow, headings, CTA buttons
+============================================================ */
 @media (max-width: 1024px) {
+
+    /* Req 2: Belt-and-suspenders overflow clamp */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    /* Req 3: All headings centered on tablet */
+    h1, h2, h3 {
+        text-align: center !important;
+    }
+
+    /* Req 4: CTA / section buttons block + centered */
+    .section .btn,
+    .btn-wrapper .btn,
+    section .btn {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    /* Nav */
     .nav-links {
         display: none;
     }
     
-    .nav-actions .theme-toggle,
-    .nav-actions .rtl-toggle,
-    .nav-actions .btn-secondary {
+    .nav-actions > *:not(.hamburger) {
         display: none;
     }
 
     .hamburger {
         display: block;
+    }
+
+    .grid-cols-3, .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Force all grid spans to 1 column on tablet */
+    [style*="grid-column: span 2"], [style*="grid-column: span 3"] {
+        grid-column: span 1 !important;
     }
 
     .nav-menu {
@@ -403,7 +515,7 @@ footer {
     }
 
     .nav-links {
-        display: flex; /* Re-show inside the vertical menu */
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
@@ -423,8 +535,10 @@ footer {
 
     .mobile-actions {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: center;
         width: 100%;
         margin-top: 20px;
         border-top: 2px solid var(--border-color);
@@ -433,24 +547,136 @@ footer {
 
     .mobile-actions .theme-toggle,
     .mobile-actions .rtl-toggle {
-        justify-content: flex-start;
-        width: 100%;
-        gap: 15px;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        color: var(--text-primary);
+        transition: all var(--transition-base);
+    }
+
+    .mobile-actions .theme-toggle:hover,
+    .mobile-actions .rtl-toggle:hover {
+        background: var(--accent-primary);
+        color: white;
+        transform: translateY(-2px);
     }
 
     .mobile-actions .btn-secondary {
         width: 100%;
+        margin-top: 10px;
         justify-content: center;
     }
 
+    /* Footer: 2-col on tablet */
     .footer-grid { grid-template-columns: 1fr 1fr; }
+
+    /* Footer bottom flex-wrap for small tablets */
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* Newsletter form: stack on tablet */
+    .newsletter-form-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
 }
 
+/* ============================================================
+   RESPONSIVE — Mobile (max-width: 768px)
+   Req 1, 2, 3, 4 reinforced for 320px–768px
+============================================================ */
 @media (max-width: 768px) {
+
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    /* Req 3: headings centered on mobile */
+    h1, h2, h3 {
+        text-align: center !important;
+    }
+
+    /* Req 4: All section CTAs block + auto-margin centered */
+    .section .btn,
+    .btn-wrapper .btn,
+    section .btn {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
     .footer-grid { grid-template-columns: 1fr; }
-    
+
     .grid-cols-3, .grid-cols-2 {
         grid-template-columns: 1fr;
+    }
+
+    /* Pricing cards: no scale transform on mobile (avoids overflow) */
+    .pricing-card.popular {
+        transform: scale(1) !important;
+    }
+
+    /* Container padding clamp for 320px */
+    .container {
+        padding: 0 16px;
+    }
+
+    /* Newsletter email+btn stack */
+    .newsletter-form-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+
+    /* General cards: ensure they don't overflow */
+    .card {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* Floating cards: flex-col on small screens */
+    .floating-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Footer bottom stacks vertically on mobile */
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* Section padding reduce on 320px */
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    /* Pricing card full-width */
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 4-col grid collapses to 2 on mobile, then 1 */
+    .grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
@@ -561,4 +787,105 @@ footer {
 /* RTL Support for Accordion Icons */
 [dir="rtl"] .faq-header {
     text-align: right;
+}
+
+/* Accessibility Utilities */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* Button wrapping utilities */
+.btn-wrapper {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center; /* Default centered for hero etc. */
+}
+
+/* Generic responsive centering utility (mobile/tablet) */
+@media (max-width: 1024px) {
+    .center-on-mobile {
+        text-align: center !important;
+        margin-top: 30px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    .center-on-mobile h1,
+    .center-on-mobile h2,
+    .center-on-mobile h3,
+    .center-on-mobile h4,
+    .center-on-mobile p {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .center-on-mobile .btn-wrapper {
+        justify-content: center !important;
+    }
+
+    .center-on-mobile .card, .center-on-mobile div[class*="card"] {
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .center-on-mobile .card p, .center-on-mobile .card h3 {
+        text-align: center !important;
+    }
+
+    .center-on-mobile ul {
+        display: inline-block !important;
+        text-align: left;
+        margin: 0 auto 30px !important;
+        width: 100%;
+        max-width: fit-content;
+    }
+
+    /* Fixing Hero Padding Overflow */
+    .glass-hero {
+        padding: 30px 20px !important;
+    }
+
+    .glass-hero h1 {
+        font-size: clamp(1.8rem, 7vw, 2.8rem) !important;
+    }
+}
+
+/* ============================================================
+   GLOBAL UTILITIES
+============================================================ */
+
+/* Centered CTA wrapper — use as fallback for any lone button */
+.btn-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Dashboard body: allow sidebar slide without breaking overflow-x */
+body.dashboard-body {
+    overflow-x: visible;
+    overflow-y: hidden;
+}
+
+/* Image overlay text removal — any position:absolute text inside image wrappers */
+.image-wrapper .overlay-text,
+.hero-image-wrapper .text-overlay,
+.img-container .absolute-text {
+    display: none !important;
 }

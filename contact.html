@@ -49,6 +49,12 @@
             gap: 30px;
             padding-right: 40px;
         }
+
+        @media (max-width: 1024px) {
+            .contact-info {
+                padding-right: 0;
+            }
+        }
         
         .info-card {
             display: flex;
@@ -67,6 +73,22 @@
             color: var(--accent-primary);
             flex-shrink: 0;
         }
+
+        /* Contact info: stack vertically + center on mobile */
+        @media (max-width: 768px) {
+            .contact-info {
+                padding-right: 0;
+                text-align: center;
+            }
+            .info-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .info-card > div {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -82,16 +104,18 @@
                     <li><a href="services.html">Services</a></li>
                     <li><a href="care-plans.html">Care Plans</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                     <li><a href="dashboard/index.html">Dashboard</a></li>
                 </ul>
                 
                 <div class="mobile-actions">
-                    <button class="theme-toggle">
-                        <i data-lucide="moon"></i> Toggle Theme
+                    <button class="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+                        <i data-lucide="moon"></i>
+                        <span class="sr-only">Toggle Theme</span>
                     </button>
-                    <div class="rtl-toggle">
-                        <i data-lucide="languages"></i> Change Language
+                    <div class="rtl-toggle" aria-label="Change Language" role="button" tabindex="0" title="Change Language">
+                        <i data-lucide="languages"></i>
+                        <span class="sr-only">Change Language</span>
                     </div>
                     <a href="login.html" class="btn btn-secondary">Sign In</a>
                 </div>
@@ -114,7 +138,7 @@
             <div class="grid grid-cols-2 gap-md" style="align-items: flex-start;">
                 
                 <div class="contact-info">
-                    <h2 style="text-align: left;">Contact Information</h2>
+                    <h2>Contact Information</h2>
                     <p>Our team is available to assist you with any inquiries regarding our astronomical programs.</p>
                     
                     <div class="info-card">
@@ -221,9 +245,9 @@
             <div class="card" style="background: var(--bg-primary); padding: 40px; border: 1px solid var(--accent-primary);">
                 <div class="grid grid-cols-2 gap-md" style="align-items: center; text-align: left;">
                     <div>
-                        <h2 style="text-align: left;">Technical <span style="color: var(--accent-primary);">Support</span></h2>
+                        <h2>Technical <span style="color: var(--accent-primary);">Support</span></h2>
                         <p>Having trouble connecting to a remote telescope or accessing your materials? Our technical team is available 24/7 for student support.</p>
-                        <div class="btn-wrapper" style="justify-content: flex-start;">
+                        <div class="btn-wrapper">
                              <a href="#" class="btn btn-primary">Open Support Portal</a>
                              <a href="#" class="btn btn-secondary">System Status</a>
                         </div>
@@ -254,7 +278,7 @@
                 <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (3).jpeg" alt="Social 3" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md);">
                 <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM.jpeg" alt="Social 4" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md);">
             </div>
-            <div class="btn-center">
+            <div class="btn-wrapper" style="margin-top: 30px;">
                 <a href="#" class="btn btn-primary"><i data-lucide="instagram"></i> View Instagram Feed</a>
             </div>
         </section>
@@ -269,7 +293,7 @@
                         <i data-lucide="orbit"></i>
                         ASCLOGY
                     </a>
-                    <p style="color: #94a3b8;">Discover the cosmos with expert-led training. From beginner stargazing to professional observation techniques.</p>
+                    <p>Discover the cosmos with expert-led training. From beginner stargazing to professional observation techniques.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -310,8 +334,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Astronomy Academy. All rights reserved.</p>
                 <div style="display: flex; gap: 20px;">
-                    <a href="#" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
-                    <a href="#" style="color: #94a3b8; text-decoration: none;">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
         </div>

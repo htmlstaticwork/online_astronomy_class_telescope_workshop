@@ -26,7 +26,7 @@
             <!-- Unified Navigation Menu -->
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="home-2.html">Home 2</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="care-plans.html">Care Plans</a></li>
@@ -36,11 +36,13 @@
                 </ul>
 
                 <div class="mobile-actions">
-                    <button class="theme-toggle" onclick="document.getElementById('theme-toggle').click()">
-                        <i data-lucide="moon"></i> Toggle Theme
+                    <button class="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+                        <i data-lucide="moon"></i>
+                        <span class="sr-only">Toggle Theme</span>
                     </button>
-                    <div class="rtl-toggle" onclick="document.querySelector('.rtl-toggle').click()">
-                        <i data-lucide="languages"></i> Change Language
+                    <div class="rtl-toggle" aria-label="Change Language" role="button" tabindex="0" title="Change Language">
+                        <i data-lucide="languages"></i>
+                        <span class="sr-only">Change Language</span>
                     </div>
                     <a href="login.html" class="btn btn-secondary">Sign In</a>
                 </div>
@@ -114,7 +116,7 @@
                 <div class="grid grid-cols-2 gap-md" style="align-items: center;">
                     <img src="img/WhatsApp Image 2026-04-02 at 4.10.22 PM (3).jpeg" alt="Telescope Workshop"
                         style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-                    <div style="padding: 20px;">
+                    <div style="padding: 20px;" class="center-on-mobile">
                         <h3>Practical Workshops</h3>
                         <p>Our workshops provide hands-on training with professional equipment, teaching you everything
                             from telescope assembly to astrophotography.</p>
@@ -132,7 +134,7 @@
                                 Deep Sky Object Localization
                             </li>
                         </ul>
-                        <div class="btn-wrapper" style="justify-content: flex-start;">
+                        <div class="btn-wrapper">
                             <a href="services.html" class="btn btn-primary">Enroll Today</a>
                         </div>
                     </div>
@@ -237,7 +239,7 @@
                     Newsletter</h2>
                 <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 30px;">Get the latest
                     astronomical news, workshop alerts, and stargazing tips delivered to your inbox.</p>
-                <div style="display: flex; gap: 15px; justify-content: center; max-width: 500px; margin: 0 auto;">
+                <div class="newsletter-form-row" style="display: flex; gap: 15px; justify-content: center; max-width: 500px; margin: 0 auto;">
                     <input type="email" placeholder="Enter your email"
                         style="flex: 1; padding: 12px; border-radius: var(--radius-md); border: none; outline: none;">
                     <button class="btn btn-gold">Join Now</button>
@@ -256,7 +258,7 @@
                         <i data-lucide="orbit"></i>
                         ASCLOGY
                     </a>
-                    <p style="color: #94a3b8;">Discover the cosmos with expert-led training. From beginner stargazing to
+                    <p>Discover the cosmos with expert-led training. From beginner stargazing to
                         professional observation techniques.</p>
                 </div>
                 <div class="footer-col">
@@ -298,8 +300,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Astronomy Academy. All rights reserved.</p>
                 <div style="display: flex; gap: 20px;">
-                    <a href="#" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
-                    <a href="#" style="color: #94a3b8; text-decoration: none;">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
         </div>

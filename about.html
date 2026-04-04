@@ -27,17 +27,19 @@
                     <li><a href="home-2.html">Home 2</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="care-plans.html">Care Plans</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="dashboard/index.html">Dashboard</a></li>
                 </ul>
                 
                 <div class="mobile-actions">
-                    <button class="theme-toggle">
-                        <i data-lucide="moon"></i> Toggle Theme
+                    <button class="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
+                        <i data-lucide="moon"></i>
+                        <span class="sr-only">Toggle Theme</span>
                     </button>
-                    <div class="rtl-toggle">
-                        <i data-lucide="languages"></i> Change Language
+                    <div class="rtl-toggle" aria-label="Change Language" role="button" tabindex="0" title="Change Language">
+                        <i data-lucide="languages"></i>
+                        <span class="sr-only">Change Language</span>
                     </div>
                     <a href="login.html" class="btn btn-secondary">Sign In</a>
                 </div>
@@ -55,8 +57,8 @@
     <main style="padding-top: 80px;">
         <section class="section container">
             <div class="grid grid-cols-2 gap-md" style="align-items: center;">
-                <div style="padding-right: 40px;">
-                    <h1 style="text-align: left;">Our <span style="color: var(--accent-primary);">Celestial</span> Mission</h1>
+                <div class="center-on-mobile">
+                    <h1>Our <span style="color: var(--accent-primary);">Celestial</span> Mission</h1>
                     <p style="font-size: 1.1rem; color: var(--text-secondary);">Founded by a group of passionate astronomers and educators, our mission is to make the wonders of the universe accessible to everyone. We believe that everyone should have the chance to see the rings of Saturn or the moons of Jupiter through a telescope.</p>
                     <p>Whether you're a student, a hobbyist, or an aspiring professional, we provide the tools, knowledge, and community to help you explore the cosmos.</p>
                 </div>
@@ -96,11 +98,13 @@
         <section class="section container">
              <div class="grid grid-cols-2 gap-md" style="align-items: center;">
                 <img src="img/WhatsApp Image 2026-04-02 at 4.10.22 PM (3).jpeg" alt="Night Class" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
-                <div style="padding-left: 40px;">
-                    <h2 style="text-align: left;">Our Story</h2>
+                <div class="center-on-mobile">
+                    <h2>Our Story</h2>
                     <p>It started with a single telescope in a backyard. Our founder, Dr. Orion Starwell, saw the sheer excitement and wonder in his children's eyes when they saw the Andromeda Galaxy for the first time. He realized that this experience should be available to everyone, and כך Astronomy Academy was born.</p>
                     <p>Today, we have thousands of students and a network of remotely controlled telescopes throughout the world. Join us on this incredible journey.</p>
-                    <a href="register.html" class="btn btn-primary">Our Programs</a>
+                    <div class="btn-wrapper">
+                        <a href="register.html" class="btn btn-primary">Our Programs</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -183,9 +187,11 @@
                 <div class="grid grid-cols-2 gap-md" style="align-items: center; text-align: left;">
                      <img src="img/WhatsApp Image 2026-04-02 at 4.10.18 PM (1).jpeg" alt="Outreach" style="width: 100%; border-radius: var(--radius-lg);">
                      <div style="padding: 20px;">
-                        <h2 style="text-align: left;">Community <span style="color: var(--accent-primary);">Outreach</span></h2>
+                        <h2>Community <span style="color: var(--accent-primary);">Outreach</span></h2>
                         <p>We believe the stars belong to everyone. That's why we dedicate 15% of our telescope time to underprivileged schools and community science centers worldwide for free.</p>
-                        <a href="contact.html" class="btn btn-secondary">Learn About Grant Programs</a>
+                        <div class="btn-wrapper">
+                            <a href="contact.html" class="btn btn-secondary">Learn About Grant Programs</a>
+                        </div>
                      </div>
                 </div>
             </div>
@@ -201,7 +207,7 @@
                         <i data-lucide="orbit"></i>
                         ASCLOGY
                     </a>
-                    <p style="color: #94a3b8;">Discover the cosmos with expert-led training. From beginner stargazing to professional observation techniques.</p>
+                    <p>Discover the cosmos with expert-led training. From beginner stargazing to professional observation techniques.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -242,8 +248,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2026 Astronomy Academy. All rights reserved.</p>
                 <div style="display: flex; gap: 20px;">
-                    <a href="#" style="color: #94a3b8; text-decoration: none;">Privacy Policy</a>
-                    <a href="#" style="color: #94a3b8; text-decoration: none;">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
         </div>
