@@ -29,13 +29,18 @@
             <a href="../login.html" class="nav-item" style="color: #ef4444;"><i data-lucide="log-out"></i> Logout</a>
         </div>
     </aside>
+    
+    <!-- Sidebar Backdrop Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <main class="dashboard-main">
         <header class="dashboard-header">
             <button id="dash-hamburger" class="hamburger" aria-label="Toggle Sidebar" title="Toggle Sidebar">
                 <i data-lucide="menu"></i>
             </button>
-            <div class="header-search"><i data-lucide="search"></i><input type="text" placeholder="Search logs..."></div>
+            <div class="header-search">
+                <input type="text" placeholder="Search logs...">
+            </div>
             <div class="header-actions">
                 <button class="icon-btn" aria-label="Notifications" title="Notifications"><i data-lucide="bell"></i><span class="notification-badge"></span></button>
                 <button id="dash-theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode"><i data-lucide="moon"></i></button>

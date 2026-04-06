@@ -112,7 +112,10 @@ body {
 }
 
 .social-btn:hover {
-    background-color: var(--bg-secondary);
+    background-color: rgba(99, 102, 241, 0.05);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
 }
 
 .auth-switch {
@@ -147,14 +150,17 @@ body {
     color: #4f46e5;
 }
 
-/* Forgot password wraps cleanly on 320px */
 @media (max-width: 480px) {
     .form-footer {
-        flex-wrap: wrap;
-        gap: 8px;
+        flex-wrap: nowrap;
+        gap: 15px;
+    }
+    .form-footer label {
+        white-space: nowrap;
     }
     .form-footer a {
-        width: 100%;
+        width: auto;
         text-align: right;
+        font-size: 0.85rem;
     }
 }

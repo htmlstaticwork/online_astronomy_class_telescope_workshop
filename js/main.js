@@ -85,7 +85,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Simple On-Scroll Animation (Fade In)
+    // 3. Dashboard Sidebar Toggle Logic
+    const dashHamburger = document.getElementById('dash-hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    if (dashHamburger && sidebar) {
+        const openSidebar = () => {
+            sidebar.classList.add('open');
+            if (overlay) overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeSidebar = () => {
+            sidebar.classList.remove('open');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        dashHamburger.addEventListener('click', () => {
+            if (sidebar.classList.contains('open')) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+
+        if (overlay) {
+            overlay.addEventListener('click', closeSidebar);
+        }
+    }
+
+    // 4. Simple On-Scroll Animation (Fade In)
     const fadeElements = document.querySelectorAll('.card, .section h2, .section p, .hero-content');
     
     const observerOptions = {

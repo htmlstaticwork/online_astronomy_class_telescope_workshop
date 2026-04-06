@@ -119,20 +119,11 @@ body.dashboard-body {
 
 .header-search input {
     width: 100%;
-    padding: 8px 15px 8px 40px;
+    padding: 10px 15px;
     border-radius: var(--radius-md);
     border: 1px solid var(--border-color);
     background: var(--bg-secondary);
     color: var(--text-primary);
-}
-
-.header-search i {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-secondary);
-    width: 18px;
 }
 
 .header-actions {
@@ -427,6 +418,7 @@ body.dashboard-body {
         gap: 5px;
         padding: 12px 0;
         border-bottom: 1px dashed var(--border-color);
+        text-align: center;
     }
 
     .activity-table td:last-child {

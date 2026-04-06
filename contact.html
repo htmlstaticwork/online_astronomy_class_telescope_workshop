@@ -47,7 +47,8 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
-            padding-right: 40px;
+            padding-right: 0px;
+            text-align: center;
         }
 
         @media (max-width: 1024px) {
@@ -58,8 +59,10 @@
         
         .info-card {
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 15px;
             align-items: center;
+            text-align: center;
         }
         
         .info-card .icon-wrapper {
@@ -135,7 +138,7 @@
             <h1 class="text-center">Connect with Our <span style="color: var(--accent-primary);">Observatory</span></h1>
             <p class="text-center" style="max-width: 600px; margin: 0 auto 50px;">Have questions about our courses or telescope workshops? Reach out to our team of astronomers.</p>
             
-            <div class="grid grid-cols-2 gap-md" style="align-items: flex-start;">
+            <div class="grid grid-cols-2 gap-md" style="align-items: center;">
                 
                 <div class="contact-info">
                     <h2>Contact Information</h2>
@@ -173,7 +176,7 @@
                     
                     <div style="margin-top: 20px;">
                         <h4>Follow Our Discoveries</h4>
-                        <div class="footer-social" style="margin-top: 15px;">
+                        <div class="footer-social" style="margin-top: 15px; justify-content: center;">
                             <a href="#" class="social-icon instagram" title="Instagram" aria-label="Instagram">
                                 <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
                             </a>
@@ -222,17 +225,17 @@
                 <h2 class="text-center">Our Global <span style="color: var(--accent-primary);">Network</span></h2>
                 <div class="grid grid-cols-3 gap-md" style="margin-top: 50px;">
                     <div class="card">
-                        <img src="img/WhatsApp Image 2026-04-02 at 4.10.18 PM.jpeg" alt="Chile" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 20px;">
+                        <img src="img/WhatsApp Image 2026-04-02 at 4.10.18 PM.jpeg" alt="Chile" class="card-img" style="height: auto;">
                         <h4>Atacama Hub, Chile</h4>
                         <p style="font-size: 0.9rem;">Primary remote telescope arrays for deep-space photography.</p>
                     </div>
                     <div class="card">
-                        <img src="img/WhatsApp Image 2026-04-02 at 4.10.19 PM (1).jpeg" alt="Namibia" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 20px;">
+                        <img src="img/WhatsApp Image 2026-04-02 at 4.10.19 PM (1).jpeg" alt="Namibia" class="card-img" style="height: auto;">
                         <h4>Star Valley, Namibia</h4>
                         <p style="font-size: 0.9rem;">Southern hemisphere flagship observatory for student training.</p>
                     </div>
                     <div class="card">
-                        <img src="img/WhatsApp Image 2026-04-02 at 4.10.19 PM.jpeg" alt="Spain" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 20px;">
+                        <img src="img/WhatsApp Image 2026-04-02 at 4.10.19 PM.jpeg" alt="Spain" class="card-img" style="height: auto;">
                         <h4>Canary Isles, Spain</h4>
                         <p style="font-size: 0.9rem;">European regional center for workshops and live webinars.</p>
                     </div>
@@ -273,10 +276,10 @@
             <h2 class="text-center">Live from the <span style="color: var(--accent-primary);">Cosmos</span></h2>
             <p class="text-center">Follow our real-time captures and community highlights.</p>
             <div class="grid grid-cols-4 gap-sm" style="margin-top: 50px;">
-                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (1).jpeg" alt="Social 1" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md);">
-                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (2).jpeg" alt="Social 2" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md);">
-                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (3).jpeg" alt="Social 3" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md);">
-                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM.jpeg" alt="Social 4" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius-md);">
+                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (1).jpeg" alt="Social 1" class="card-img" style="height: auto;">
+                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (2).jpeg" alt="Social 2" class="card-img" style="height: auto;">
+                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (3).jpeg" alt="Social 3" class="card-img" style="height: auto;">
+                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM.jpeg" alt="Social 4" class="card-img" style="height: auto;">
             </div>
             <div class="btn-wrapper" style="margin-top: 30px;">
                 <a href="#" class="btn btn-primary"><i data-lucide="instagram"></i> View Instagram Feed</a>
@@ -289,7 +292,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="index.html" class="logo" style="color: white; margin-bottom: 20px;">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px;">
                         <i data-lucide="orbit"></i>
                         ASCLOGY
                     </a>
