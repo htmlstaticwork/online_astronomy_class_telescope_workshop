@@ -372,6 +372,7 @@ footer p {
     display: flex;
     gap: 16px;
     align-items: center;
+    flex-wrap: wrap; /* Ensure icons wrap on narrow screens */
 }
 
 .social-icon {
@@ -390,6 +391,7 @@ footer p {
     color: var(--text-primary) !important;
     position: relative;
     overflow: hidden;
+    flex-shrink: 0; /* Prevent icons from shrinking */
 }
 
 .social-icon i, .social-icon svg {
@@ -528,8 +530,12 @@ footer p {
     }
 
     /* Req 3: All headings centered on tablet */
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
         text-align: center !important;
+    }
+
+    .footer-social {
+        justify-content: center;
     }
 
     /* Req 4: CTA / section buttons block + centered */
@@ -680,8 +686,12 @@ footer p {
     }
 
     /* Req 3: headings centered on mobile */
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
         text-align: center !important;
+    }
+
+    .footer-social {
+        justify-content: center;
     }
 
     /* Req 4: All section CTAs block + auto-margin centered */
@@ -752,9 +762,9 @@ footer p {
         grid-template-columns: 1fr !important;
     }
 
-    /* 4-col grid collapses to 2 on mobile, then 1 */
+    /* 4-col grid collapses to 1 on mobile for better visibility */
     .grid-cols-4 {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: 1fr !important;
     }
 }
 
