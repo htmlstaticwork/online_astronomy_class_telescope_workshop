@@ -90,8 +90,8 @@ body {
 
 .social-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
+    gap: 15px;
     margin-top: 20px;
 }
 
@@ -108,7 +108,8 @@ body {
     cursor: pointer;
     font-weight: 600;
     transition: var(--transition-fast);
-    width: 100%;
+    width: auto;
+    flex: 1;
 }
 
 .social-btn:hover {
@@ -122,6 +123,7 @@ body {
     margin-top: var(--spacing-xl);
     text-align: center;
     font-size: 0.95rem;
+    white-space: nowrap;
 }
 
 .auth-switch a {
@@ -153,7 +155,9 @@ body {
 @media (max-width: 480px) {
     .form-footer {
         flex-wrap: nowrap;
-        gap: 15px;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 0.8rem;
     }
     .form-footer label {
         white-space: nowrap;
@@ -161,6 +165,6 @@ body {
     .form-footer a {
         width: auto;
         text-align: right;
-        font-size: 0.85rem;
+        white-space: nowrap;
     }
 }
