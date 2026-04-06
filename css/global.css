@@ -200,7 +200,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%;
+    /* Removed max-width: 100% to keep alignment with main container */
     overflow: hidden; /* Prevent horizontal overflow from nav icons */
 }
 
@@ -563,8 +563,24 @@ footer p {
         display: none;
     }
 
-    .hamburger {
+    .nav-container .hamburger {
         display: block;
+        margin-right: -8px; /* Align icon with container edge (compensates for 8px padding) */
+    }
+
+    .footer-col {
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        text-align: center;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .grid-cols-4, .grid-cols-3, .grid-cols-2 {
@@ -653,9 +669,9 @@ footer p {
         justify-content: center;
     }
 
-    /* Footer: 2x2 grid on tablet for better balance */
+    /* Footer: 1x4 stack on tablet for better mobile-first flow */
     .footer-grid { 
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: 1fr !important;
         gap: 40px;
     }
 
