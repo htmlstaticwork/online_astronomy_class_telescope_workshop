@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | Astronomy Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/auth.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -13,13 +16,18 @@
 
 <body>
 
+    <!-- Page-level floating controls (outside the card) -->
+    <div class="auth-page-controls">
+        <button id="theme-toggle" class="theme-toggle auth-page-btn" aria-label="Toggle Theme" title="Toggle Theme">
+            <i data-lucide="moon"></i>
+        </button>
+        <div class="rtl-toggle auth-page-btn" role="button" tabindex="0" aria-label="Toggle RTL" title="Toggle RTL Layout">
+            <i data-lucide="languages"></i>
+        </div>
+    </div>
+
     <div class="auth-card" style="max-width: 500px;">
 
-        <div class="auth-icons">
-            <button id="theme-toggle" class="theme-toggle" style="width: 30px; height: 30px;"><i
-                    data-lucide="moon"></i></button>
-            <div class="rtl-toggle" style="width: 30px; height: 30px;"><i data-lucide="languages"></i></div>
-        </div>
 
         <div class="auth-header">
             <a href="index.html" class="logo">

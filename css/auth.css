@@ -1,4 +1,7 @@
 body {
+    background:
+        linear-gradient(rgba(10, 14, 26, 0.72), rgba(10, 14, 26, 0.72)),
+        url('https://images.unsplash.com/photo-1614732414444-096e5f1122d5?w=1600') center/cover no-repeat fixed;
     background-color: var(--bg-primary);
     display: flex;
     align-items: center;
@@ -14,9 +17,19 @@ body {
     width: 100%;
     max-width: 450px;
     padding: var(--spacing-xl);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
     position: relative;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
 }
+
+[data-theme="dark"] .auth-card {
+    background: rgba(15, 21, 38, 0.90);
+    border-color: rgba(79, 142, 247, 0.2);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(79, 142, 247, 0.1);
+}
+
+/* .auth-icons removed — controls are now page-level .auth-page-controls */
 
 .auth-header {
     text-align: center;
@@ -31,14 +44,6 @@ body {
     color: var(--accent-primary);
     text-decoration: none;
     font-weight: 800;
-}
-
-.auth-icons {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
 }
 
 .form-group {

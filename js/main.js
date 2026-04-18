@@ -45,13 +45,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     lucide.createIcons();
 
-    // RTL Toggle Logic
+    // RTL Toggle Logic — persists via localStorage
     const rtlToggles = document.querySelectorAll('.rtl-toggle');
+
+    const applyDir = (dir) => {
+        document.documentElement.dir = dir;
+        localStorage.setItem('dir', dir);
+    };
+
+    // Restore saved direction on load
+    const savedDir = localStorage.getItem('dir') || 'ltr';
+    applyDir(savedDir);
+
     rtlToggles.forEach(toggle => {
         toggle.addEventListener('click', () => {
             const currentDir = document.documentElement.dir || 'ltr';
-            const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-            document.documentElement.dir = newDir;
+            applyDir(currentDir === 'ltr' ? 'rtl' : 'ltr');
+        });
+        toggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle.click();
+            }
         });
     });
 

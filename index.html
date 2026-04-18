@@ -7,6 +7,10 @@
     <title>Online Astronomy Classes & Telescope Workshops | Explore the Universe</title>
     <meta name="description"
         content="Join our expert-led online astronomy courses and practical telescope workshops. Book live sessions, access premium materials, and track your celestial journey.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- Lucide Icons -->
@@ -62,18 +66,19 @@
     <main style="padding-top: 80px;">
 
         <!-- Hero Section -->
-        <section class="section hero"
-            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/WhatsApp Image 2026-04-02 at 4.10.18 PM (1).jpeg') center/cover; color: white; min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center;">
-            <div class="container hero-content">
-                <h1 style="color: white; margin-bottom: 20px;">Unveil the Secrets of the <span
+        <section class="section hero hero-starfield"
+            style="background: linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.58)), url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1600') center/cover no-repeat fixed; color: white; min-height: 88vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <div class="container hero-content" style="position: relative; z-index: 1;">
+                <h1 class="hero-headline" style="color: white; margin-bottom: 20px; font-size: clamp(2.6rem, 6vw, 5rem);">Unveil the Secrets of the <span
                         style="color: var(--accent-secondary);">Universe</span></h1>
-                <p style="color: #e2e8f0; font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px;">
+                <div class="section-divider" style="margin-bottom: 30px;"></div>
+                <p style="color: #e2e8f0; font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; font-weight: 400;">
                     An inspiring, educational site offering online astronomy courses and practical telescope workshops
                     for all levels. From stargazing basics to advanced celestial navigation.
                 </p>
                 <div class="btn-wrapper">
-                    <a href="services.html" class="btn btn-primary">Start Learning</a>
-                    <a href="register.html" class="btn btn-secondary" style="border-color: white; color: white;">Book a
+                    <a href="services.html" class="btn btn-glow">Start Learning</a>
+                    <a href="register.html" class="btn btn-glow-outline">Book a
                         Workshop</a>
                 </div>
             </div>
@@ -81,12 +86,13 @@
 
         <!-- Features Section -->
         <section class="section container">
-            <h2 class="text-center">Why Choose Our <span style="color: var(--accent-primary);">Academy?</span></h2>
-            <p class="text-center" style="max-width: 600px; margin: 0 auto 50px;">Practical experience meets theoretical
+            <h2 class="text-center" data-aos="fade-up">Why Choose Our <span style="color: var(--accent-primary);">Academy?</span></h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+            <p class="text-center" style="max-width: 600px; margin: 0 auto 50px;" data-aos="fade-up" data-aos-delay="150">Practical experience meets theoretical
                 knowledge in our comprehensive astronomy portal.</p>
 
             <div class="grid grid-cols-3 gap-md">
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="0">
                     <div class="feature-image-wrapper">
                         <img src="img/Astronomical Observing.jpg" alt="Live Telescope Session" class="feature-image">
                     </div>
@@ -94,7 +100,7 @@
                     <p>Book real-time sessions with expert astronomers and high-powered telescopes.</p>
                     <a href="services.html" class="btn btn-secondary" style="height: 40px;">Learn More</a>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-image-wrapper">
                         <img src="img/Live Telescope.jpg" alt="Astronomy Course Materials" class="feature-image">
                     </div>
@@ -102,7 +108,7 @@
                     <p>Access exclusive PDFs, video lectures, and stellar charts from our library.</p>
                     <a href="services.html" class="btn btn-secondary" style="height: 40px;">View Materials</a>
                 </div>
-                <div class="card">
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-image-wrapper">
                         <img src="img/pppp.jpg" alt="Astronomical Observing Log" class="feature-image">
                     </div>
@@ -149,33 +155,34 @@
         <!-- Testimonials Section -->
         <section class="section" style="background-color: var(--bg-primary);">
             <div class="container">
-                <h2 class="text-center">What Our <span style="color: var(--accent-primary);">Students</span> Say</h2>
+                <h2 class="text-center" data-aos="fade-up">What Our <span style="color: var(--accent-primary);">Students</span> Say</h2>
+                <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
                 <div class="grid grid-cols-3 gap-md" style="margin-top: 50px;">
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-delay="0">
                         <div style="color: var(--accent-secondary); margin-bottom: 15px;">
                             <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
                                 data-lucide="star"></i><i data-lucide="star"></i>
                         </div>
-                        <p style="font-style: italic;">"The live telescope sessions are incredible! Seeing the Saturn
-                            rings with my own eyes was a life-changing experience."</p>
+                        <p style="font-style: italic;">&ldquo;The live telescope sessions are incredible! Seeing the Saturn
+                            rings with my own eyes was a life-changing experience.&rdquo;</p>
                         <h4 style="margin-top: 15px;">- Emily R.</h4>
                     </div>
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-delay="100">
                         <div style="color: var(--accent-secondary); margin-bottom: 15px;">
                             <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
                                 data-lucide="star"></i><i data-lucide="star"></i>
                         </div>
-                        <p style="font-style: italic;">"The course materials are very well structured. I went from
-                            knowing nothing to identifying major constellations in weeks."</p>
+                        <p style="font-style: italic;">&ldquo;The course materials are very well structured. I went from
+                            knowing nothing to identifying major constellations in weeks.&rdquo;</p>
                         <h4 style="margin-top: 15px;">- Michael K.</h4>
                     </div>
-                    <div class="card">
+                    <div class="card" data-aos="fade-up" data-aos-delay="200">
                         <div style="color: var(--accent-secondary); margin-bottom: 15px;">
                             <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
                                 data-lucide="star"></i><i data-lucide="star"></i>
                         </div>
-                        <p style="font-style: italic;">"The community here is so welcoming. The instructors really know
-                            their stuff and are always helpful."</p>
+                        <p style="font-style: italic;">&ldquo;The community here is so welcoming. The instructors really know
+                            their stuff and are always helpful.&rdquo;</p>
                         <h4 style="margin-top: 15px;">- Sarah T.</h4>
                     </div>
                 </div>
@@ -329,6 +336,15 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 60
+        });
+    </script>
 </body>
 
 </html>
