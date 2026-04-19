@@ -94,11 +94,11 @@ h5, h6 {
 }
 
 p, li, span, label {
-    font-weight: 400;
+    font-weight: 450;
 }
 
 input, textarea, select {
-    font-weight: 400;
+    font-weight: 450;
     font-family: 'Inter', sans-serif;
 }
 
@@ -234,7 +234,7 @@ header {
     align-items: center;
     gap: 10px;
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--accent-primary);
     text-decoration: none;
 }
@@ -1133,7 +1133,7 @@ body.dashboard-body {
 /* Hero heading dramatic style */
 .hero-headline {
     font-family: 'Exo 2', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.04em;
     text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
