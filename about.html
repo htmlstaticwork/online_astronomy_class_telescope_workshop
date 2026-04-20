@@ -6,7 +6,7 @@
     <title>About Us | Astronomy Academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -29,9 +29,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="home-2.html">Home 2</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="care-plans.html">Care Plans</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="dashboard/index.html">Dashboard</a></li>
                 </ul>
@@ -62,8 +62,9 @@
         <section class="section container">
             <div class="grid grid-cols-2 gap-md" style="align-items: center;">
                 <div class="center-on-mobile">
-                    <h1>Our <span style="color: var(--accent-primary);">Celestial</span> Mission</h1>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary);">Founded by a group of passionate astronomers and educators, our mission is to make the wonders of the universe accessible to everyone. We believe that everyone should have the chance to see the rings of Saturn or the moons of Jupiter through a telescope.</p>
+                    <h1 data-aos="fade-right">Our <span style="color: var(--accent-primary);">Celestial</span> Mission</h1>
+                    <div class="section-divider" data-aos="fade-right" data-aos-delay="100" style="margin-left: 0;"></div>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary);" data-aos="fade-right" data-aos-delay="200">Founded by a group of passionate astronomers and educators, our mission is to make the wonders of the universe accessible to everyone. We believe that everyone should have the chance to see the rings of Saturn or the moons of Jupiter through a telescope.</p>
                     <p>Whether you're a student, a hobbyist, or an aspiring professional, we provide the tools, knowledge, and community to help you explore the cosmos.</p>
                 </div>
                 <img src="img/nebula_celestial.png" alt="Observing Lounge" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
@@ -71,8 +72,9 @@
         </section>
 
         <section class="section">
-            <div class="container mission text-center">
-                <h2>Our Vision</h2>
+            <div class="container mission text-center" data-aos="fade-up">
+                <h2>Our <span style="color: var(--accent-secondary);">Vision</span></h2>
+                <div class="section-divider"></div>
                 <div class="grid grid-cols-3 gap-md" style="margin-top: 50px;">
                     <div>
                         <div style="background: var(--accent-primary); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin: 0 auto 20px;">
@@ -114,31 +116,40 @@
         </section>
         <!-- Our Team Section -->
         <section class="section container">
-            <h2 class="text-center">Meet Our <span style="color: var(--accent-primary);">Founders</span> & Experts</h2>
-            <div class="grid grid-cols-4 gap-md" style="margin-top: 50px;">
-                <div class="card" style="padding: 0; overflow: hidden;">
-                    <img src="img/team_founder.jpg" alt="Team 1" style="width: 100%; height: 250px; object-fit: cover;">
+            <h2 class="text-center" data-aos="fade-up">Meet Our <span style="color: var(--accent-primary);">Founders</span> & Experts</h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+            <div class="grid grid-cols-4 gap-md" style="margin-top: 50px;" data-aos="fade-up">
+                <div class="card" style="padding: 0; overflow: hidden;" data-aos="fade-up" data-aos-delay="0">
+                    <div class="team-image-wrapper">
+                        <img src="img/team_founder.jpg" alt="Dr. Orion Starwell" class="team-image">
+                    </div>
                     <div style="padding: 20px;">
                         <h4>Dr. Orion Starwell</h4>
                         <p style="font-size: 0.85rem; color: var(--accent-primary);">Founder & Chief Astronomer</p>
                     </div>
                 </div>
-                <div class="card" style="padding: 0; overflow: hidden;">
-                    <img src="img/team_education.jpg" alt="Team 2" style="width: 100%; height: 250px; object-fit: cover; object-position: top;">
+                <div class="card" style="padding: 0; overflow: hidden;" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-image-wrapper">
+                        <img src="img/team_education.jpg" alt="Sarah Zenith" class="team-image" style="object-position: top;">
+                    </div>
                     <div style="padding: 20px;">
                         <h4>Sarah Zenith</h4>
                         <p style="font-size: 0.85rem; color: var(--accent-primary);">Head of Education</p>
                     </div>
                 </div>
-                <div class="card" style="padding: 0; overflow: hidden;">
-                    <img src="img/team_workshop.jpg" alt="Team 3" style="width: 100%; height: 250px; object-fit: cover; object-position: top;">
+                <div class="card" style="padding: 0; overflow: hidden;" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-image-wrapper">
+                        <img src="img/team_workshop.jpg" alt="Prof. Leo Mars" class="team-image" style="object-position: top;">
+                    </div>
                     <div style="padding: 20px;">
                         <h4>Prof. Leo Mars</h4>
                         <p style="font-size: 0.85rem; color: var(--accent-primary);">Workshop Director</p>
                     </div>
                 </div>
-                <div class="card" style="padding: 0; overflow: hidden;">
-                    <img src="img/team_systems.jpg" alt="Team 4" style="width: 100%; height: 250px; object-fit: cover; object-position: top;">
+                <div class="card" style="padding: 0; overflow: hidden;" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-image-wrapper">
+                        <img src="img/team_systems.jpg" alt="David Cosmos" class="team-image" style="object-position: top;">
+                    </div>
                     <div style="padding: 20px;">
                         <h4>David Cosmos</h4>
                         <p style="font-size: 0.85rem; color: var(--accent-primary);">Remote Systems Engineer</p>
@@ -216,9 +227,9 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="care-plans.html">Care Plans</a></li>
-                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -260,5 +271,14 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 60
+        });
+    </script>
 </body>
 </html>

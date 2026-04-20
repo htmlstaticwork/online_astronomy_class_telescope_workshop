@@ -7,7 +7,7 @@
     <title>Sign Up | Astronomy Academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/auth.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -16,17 +16,16 @@
 
 <body>
 
-    <!-- Page-level floating controls (outside the card) -->
-    <div class="auth-page-controls">
-        <button id="theme-toggle" class="theme-toggle auth-page-btn" aria-label="Toggle Theme" title="Toggle Theme">
-            <i data-lucide="moon"></i>
-        </button>
-        <div class="rtl-toggle auth-page-btn" role="button" tabindex="0" aria-label="Toggle RTL" title="Toggle RTL Layout">
-            <i data-lucide="arrow-right-left"></i>
-        </div>
-    </div>
-
     <div class="auth-card" style="max-width: 500px;">
+        <!-- Page-level controls nested inside card for mobile stability -->
+        <div class="auth-page-controls">
+            <button id="theme-toggle" class="theme-toggle auth-page-btn" aria-label="Toggle Theme" title="Toggle Theme">
+                <i data-lucide="moon"></i>
+            </button>
+            <div class="rtl-toggle auth-page-btn" role="button" tabindex="0" aria-label="Toggle RTL" title="Toggle RTL Layout">
+                <i data-lucide="arrow-right-left"></i>
+            </div>
+        </div>
 
 
         <div class="auth-header">

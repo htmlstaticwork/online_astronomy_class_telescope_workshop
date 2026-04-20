@@ -6,8 +6,8 @@
     <title>Centering Mastery | ASCLOGY</title>
     <link rel="icon" type="image/png" href="img/favicon.png">
     
-    <!-- Google Fonts: Inter & Outfit -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
     
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,25 +17,25 @@
 
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --primary-gradient: linear-gradient(135deg, #4a7cf7 0%, #7c5def 100%);
             --glass-bg: rgba(255, 255, 255, 0.95);
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --text-main: #0f1729;
+            --text-muted: #4b5e8a;
+            --shadow-premium: 0 20px 48px -8px rgba(74, 124, 247, 0.25), 0 4px 12px -4px rgba(0,0,0,0.1);
         }
 
         [data-theme="dark"] {
-            --glass-bg: rgba(15, 23, 42, 0.9);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
+            --glass-bg: #121212;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #0f172a; /* Deep space background */
+            background: #000000; /* High contrast black background */
             background-image: 
-                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(74, 124, 247, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(124, 93, 239, 0.1) 0px, transparent 50%);
             margin: 0;
             padding: 0;
             /* Requirement 1: Flexbox centering on body */
@@ -93,11 +93,11 @@
         }
 
         h1 {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
             color: var(--text-main);
             margin-bottom: 12px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.025em;
         }
 
         .sub-heading {

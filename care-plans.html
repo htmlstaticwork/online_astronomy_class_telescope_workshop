@@ -7,7 +7,7 @@
     <title>Care Plans &amp; Subscriptions | Astronomy Academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -74,9 +74,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="home-2.html">Home 2</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="care-plans.html" class="active">Care Plans</a></li>
-                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="dashboard/index.html">Dashboard</a></li>
                 </ul>
@@ -106,8 +106,9 @@
 
     <main style="padding-top: 80px;">
         <section class="section container">
-            <h1 class="text-center">Subscription <span style="color: var(--accent-secondary);">Care Plans</span></h1>
-            <p class="text-center" style="max-width: 600px; margin: 0 auto;">Choose the level of support and resources
+            <h1 class="text-center" data-aos="fade-down">Subscription <span style="color: var(--accent-secondary);">Care Plans</span></h1>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+            <p class="text-center" style="max-width: 600px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="200">Choose the level of support and resources
                 that fits your astronomical goals.</p>
 
             <div class="pricing-grid">
@@ -159,8 +160,9 @@
         </section>
         <!-- Feature Comparison Table -->
         <section class="section container">
-            <h2 class="text-center">Compare <span style="color: var(--accent-primary);">Features</span></h2>
-            <div style="overflow-x: auto; margin-top: 50px;">
+            <h2 class="text-center" data-aos="fade-up">Compare <span style="color: var(--accent-primary);">Features</span></h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+            <div style="overflow-x: auto; margin-top: 50px;" data-aos="fade-up" data-aos-delay="200">
                 <table
                     style="width: 100%; border-collapse: collapse; background: var(--card-bg); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color);">
                     <thead>
@@ -217,7 +219,8 @@
         <!-- Subscription FAQ Section -->
         <section class="section" style="background-color: var(--bg-secondary);">
             <div class="container">
-                <h2 class="text-center">Common <span style="color: var(--accent-secondary);">Questions</span></h2>
+                <h2 class="text-center" data-aos="fade-up">Common <span style="color: var(--accent-secondary);">Questions</span></h2>
+                <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
                 <div class="faq-accordion">
                     <div class="faq-item">
                         <button class="faq-header">
@@ -309,9 +312,9 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="care-plans.html">Care Plans</a></li>
-                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -369,6 +372,14 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 60
+        });
+    </script>
 </body>
-
 </html>

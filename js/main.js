@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Premium Header — Add .scrolled class on scroll for glow effect
+    const header = document.querySelector('header');
+    if (header) {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Run on load
+    }
     // 1. Dark Mode Toggle Logic
     const themeToggles = document.querySelectorAll('.theme-toggle');
     const moonIcon = '<i data-lucide="moon"></i>';
@@ -131,28 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 4. Simple On-Scroll Animation (Fade In)
-    const fadeElements = document.querySelectorAll('.card, .section h2, .section p, .hero-content');
-    
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    fadeElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.6s ease-out';
-        observer.observe(el);
-    });
-
+    // Note: The custom IntersectionObserver logic has been removed in favor of the global AOS library
+    // to ensure a single, consistent animation engine across the platform.
 });

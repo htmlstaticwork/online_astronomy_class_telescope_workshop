@@ -6,20 +6,25 @@
     <title>Premium Astronomy Workshops | Advanced Exploration</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         .glass-hero {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(245, 158, 11, 0.1));
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: linear-gradient(135deg, rgba(74, 124, 247, 0.12), rgba(124, 93, 239, 0.12));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: var(--radius-lg);
             padding: var(--spacing-xl);
             max-width: 900px;
             margin: 0 auto;
+        }
+
+        [data-theme="dark"] .glass-hero {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.1);
         }
         
         .floating-card {
@@ -55,9 +60,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="home-2.html" class="active">Home 2</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="care-plans.html">Care Plans</a></li>
-                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="dashboard/index.html">Dashboard</a></li>
                 </ul>
@@ -90,8 +95,9 @@
         <section class="section" style="background: url('img/nebula_celestial.png') center/cover fixed; min-height: 90vh; display: flex; align-items: center;">
             <div class="container">
                 <div class="glass-hero text-center">
-                    <h1 style="font-size: clamp(1.8rem, 7vw, 4.5rem); margin-bottom: 20px; color: white;">Experience the <span style="color: var(--accent-secondary);">Infinity</span></h1>
-                    <p style="font-size: 1.4rem; color: #f1f5f9; margin-bottom: 40px;">Practical telescope mastery and online celestial classes designed for the dedicated astronomer.</p>
+                    <h1 style="font-size: clamp(1.8rem, 7vw, 4.5rem); margin-bottom: 20px; color: white;" data-aos="fade-down">Experience the <span style="color: var(--accent-secondary);">Infinity</span></h1>
+                    <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
+                    <p style="font-size: 1.4rem; color: #f1f5f9; margin-bottom: 40px;" data-aos="fade-up" data-aos-delay="200">Practical telescope mastery and online celestial classes designed for the dedicated astronomer.</p>
                     <div class="btn-wrapper">
                         <a href="services.html" class="btn btn-primary">Our Premium Courses</a>
                         <a href="register.html" class="btn btn-secondary" style="border-color: white; color: white;">Start Free Trial</a>
@@ -102,7 +108,8 @@
 
         <!-- Premium Services Grid -->
         <section class="section container center-on-mobile">
-            <h2 class="text-center">Master the <span style="color: var(--accent-primary);">Cosmos</span></h2>
+            <h2 class="text-center" data-aos="fade-up">Master the <span style="color: var(--accent-primary);">Cosmos</span></h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
             <div class="grid grid-cols-2 gap-md" style="margin-top: 50px;">
                 
                 <div class="floating-card">
@@ -147,7 +154,8 @@
         <!-- Dynamic Grid Section -->
         <section class="section" style="background-color: var(--bg-secondary);">
             <div class="container center-on-mobile">
-                <h2 class="text-center">Academic <span style="color: var(--accent-primary);">Insights</span></h2>
+                <h2 class="text-center" data-aos="fade-up">Academic <span style="color: var(--accent-primary);">Insights</span></h2>
+                <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
                 <div class="grid grid-cols-3 gap-md" style="margin-top: 50px;">
                     <div style="grid-column: span 2;">
                         <img src="img/nebula_celestial.png" alt="Observing Lounge" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-lg);">
@@ -170,7 +178,8 @@
 
         <!-- Live Events Calendar -->
         <section class="section container center-on-mobile">
-            <h2 class="text-center">Upcoming <span style="color: var(--accent-secondary);">Stellar</span> Events</h2>
+            <h2 class="text-center" data-aos="fade-up">Upcoming <span style="color: var(--accent-secondary);">Stellar</span> Events</h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
             <div class="grid grid-cols-3 gap-md" style="margin-top: 50px;">
                 <div class="card" style="border-top: 5px solid var(--accent-primary); display: flex; flex-direction: column;">
                     <div style="font-size: 0.9rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 10px;">APRIL 15</div>
@@ -224,7 +233,8 @@
 
         <!-- Success Stories Section -->
         <section class="section container center-on-mobile">
-            <h2 class="text-center">Astronaut <span style="color: var(--accent-primary);">Success</span> Stories</h2>
+            <h2 class="text-center" data-aos="fade-up">Astronaut <span style="color: var(--accent-primary);">Success</span> Stories</h2>
+            <div class="section-divider" data-aos="fade-up" data-aos-delay="100"></div>
             <div class="grid grid-cols-3 gap-md" style="margin-top: 50px;">
                 <div class="card">
                     <img src="img/WhatsApp Image 2026-04-02 at 4.08.56 PM.jpeg" alt="Success 1" class="card-img">
@@ -262,9 +272,9 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="care-plans.html">Care Plans</a></li>
-                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
