@@ -16,16 +16,18 @@
 
 <body>
 
-    <div class="auth-card">
-        <!-- Page-level controls nested inside card for mobile stability -->
-        <div class="auth-page-controls">
-            <button id="theme-toggle" class="theme-toggle auth-page-btn" aria-label="Toggle Theme" title="Toggle Theme">
-                <i data-lucide="moon"></i>
-            </button>
-            <div class="rtl-toggle auth-page-btn" role="button" tabindex="0" aria-label="Toggle RTL" title="Toggle RTL Layout">
-                <i data-lucide="arrow-right-left"></i>
-            </div>
+    <!-- Page-level controls outside card for a floating, overlapping look -->
+    <div class="auth-page-controls">
+        <button id="theme-toggle" class="theme-toggle auth-page-btn" aria-label="Toggle Theme" title="Toggle Theme">
+            <i data-lucide="moon"></i>
+        </button>
+        <div class="rtl-toggle auth-page-btn" role="button" tabindex="0" aria-label="Toggle RTL" title="Toggle RTL Layout">
+            <i data-lucide="arrow-right-left"></i>
         </div>
+    </div>
+
+    <div class="auth-card">
+
 
 
         <div class="auth-header">
