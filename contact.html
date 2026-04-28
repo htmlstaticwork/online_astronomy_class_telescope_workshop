@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Astronomy Academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -18,20 +21,29 @@
             border-radius: var(--radius-lg);
             padding: var(--spacing-xl);
             box-shadow: var(--shadow-lg);
+            height: 100%;
         }
-        
+
+        .support-card {
+            background: var(--bg-primary);
+            padding: 40px;
+            border: 1px solid var(--accent-primary);
+        }
+
         .form-group {
             margin-bottom: var(--spacing-md);
             text-align: left;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
         }
-        
-        .form-group input, .form-group textarea, .form-group select {
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 12px 16px;
             border: 1px solid var(--border-color);
@@ -41,26 +53,38 @@
             font-family: inherit;
             transition: border-color var(--transition-fast);
         }
-        
-        .form-group input:focus, .form-group textarea:focus {
+
+        .form-group input:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-primary);
         }
-        
+
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 30px;
-            padding-right: 0px;
+            padding: var(--spacing-xl);
             text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            height: 100%;
+            justify-content: center;
         }
 
         @media (max-width: 1024px) {
             .contact-info {
                 padding-right: 0;
             }
+
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: var(--spacing-xl);
+            }
         }
-        
+
         .info-card {
             display: flex;
             flex-direction: column;
@@ -68,7 +92,7 @@
             align-items: center;
             text-align: center;
         }
-        
+
         .info-card .icon-wrapper {
             background: rgba(99, 102, 241, 0.1);
             width: 50px;
@@ -83,21 +107,56 @@
 
         /* Contact info: stack vertically + center on mobile */
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            h2 {
+                font-size: 1.6rem !important;
+            }
+
+            .contact-info,
+            .contact-form,
+            .support-card {
+                padding: 20px !important;
+            }
+
+            .contact-grid {
+                gap: 20px !important;
+            }
+
             .contact-info {
-                padding-right: 0;
                 text-align: center;
             }
+
+            .contact-info h2,
+            .contact-info p,
+            .contact-info h4 {
+                text-align: center !important;
+            }
+
             .info-card {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
-            .info-card > div {
+
+            .info-card>div {
                 text-align: center;
+            }
+
+            .contact-hero-p {
+                margin: 0 auto 30px !important;
+                font-size: 1rem !important;
+            }
+
+            .footer-social {
+                justify-content: center !important;
             }
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -114,13 +173,14 @@
                     <li><a href="contact.html" class="active">Contact</a></li>
                     <li><a href="dashboard/index.html">Dashboard</a></li>
                 </ul>
-                
+
                 <div class="mobile-actions">
                     <button class="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme">
                         <i data-lucide="moon"></i>
                         <span class="sr-only">Toggle Theme</span>
                     </button>
-                    <div class="rtl-toggle" aria-label="Change Language" role="button" tabindex="0" title="Change Language">
+                    <div class="rtl-toggle" aria-label="Change Language" role="button" tabindex="0"
+                        title="Change Language">
                         <i data-lucide="arrow-right-left"></i>
                         <span class="sr-only">Change Language</span>
                     </div>
@@ -139,16 +199,18 @@
 
     <main style="padding-top: 80px;">
         <section class="section container">
-            <h1 class="text-center" data-aos="fade-down">Connect with Our <span style="color: var(--accent-primary);">Observatory</span></h1>
+            <h1 class="text-center" data-aos="fade-down">Connect with Our <span
+                    style="color: var(--accent-primary);">Observatory</span></h1>
 
-            <p class="text-center" style="max-width: 600px; margin: 0 auto 50px;" data-aos="fade-up" data-aos-delay="200">Have questions about our courses or telescope workshops? Reach out to our team of astronomers.</p>
-            
-            <div class="grid grid-cols-2 gap-md" style="align-items: center;">
-                
+            <p class="text-center contact-hero-p" style="max-width: 600px; margin: 0 auto 50px;" data-aos="fade-up"
+                data-aos-delay="200">Have questions about our courses or telescope workshops? Reach out to our team of
+                astronomers.</p>
+
+            <div class="grid grid-cols-2 gap-xl contact-grid" style="align-items: stretch;">
+
                 <div class="contact-info">
                     <h2>Contact Information</h2>
-                    <p>Our team is available to assist you with any inquiries regarding our astronomical programs.</p>
-                    
+
                     <div class="info-card">
                         <div class="icon-wrapper">
                             <i data-lucide="mail"></i>
@@ -158,7 +220,7 @@
                             <p>contact@astronomyacademy.com</p>
                         </div>
                     </div>
-                    
+
                     <div class="info-card">
                         <div class="icon-wrapper">
                             <i data-lucide="phone"></i>
@@ -168,7 +230,7 @@
                             <p>+1 (555) STAR-GAZE</p>
                         </div>
                     </div>
-                    
+
                     <div class="info-card">
                         <div class="icon-wrapper">
                             <i data-lucide="map-pin"></i>
@@ -178,23 +240,35 @@
                             <p>123 Celestial Path, Star Valley, CA 90210</p>
                         </div>
                     </div>
-                    
+
                     <div style="margin-top: 20px;">
                         <h4>Follow Our Discoveries</h4>
                         <div class="footer-social" style="margin-top: 15px; justify-content: center;">
                             <a href="#" class="social-icon instagram" title="Instagram" aria-label="Instagram">
-                                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg">
+                                    <path fill="currentColor"
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                                    </path>
+                                </svg>
                             </a>
                             <a href="#" class="social-icon x-twitter" title="X (Twitter)" aria-label="X (Twitter)">
-                                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg">
+                                    <path fill="currentColor"
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                    </path>
+                                </svg>
                             </a>
                             <a href="#" class="social-icon youtube" title="YouTube" aria-label="YouTube">
-                                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg"><path fill="currentColor" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+                                <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg">
+                                    <path fill="currentColor"
+                                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
+                                    </path>
+                                </svg>
                             </a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form">
                     <form action="#">
                         <div class="form-group">
@@ -216,18 +290,20 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help you explore the stars..." required></textarea>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Tell us how we can help you explore the stars..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
-                
+
             </div>
         </section>
         <!-- Global Locations Section -->
         <section class="section" style="background-color: var(--bg-secondary);">
             <div class="container">
-                <h2 class="text-center" data-aos="fade-up">Our Global <span style="color: var(--accent-primary);">Network</span></h2>
+                <h2 class="text-center" data-aos="fade-up">Our Global <span
+                        style="color: var(--accent-primary);">Network</span></h2>
 
                 <div class="grid grid-cols-3 gap-md" style="margin-top: 50px;">
                     <div class="card">
@@ -251,18 +327,15 @@
 
         <!-- Support Portal Section -->
         <section class="section container">
-            <div class="card" style="background: var(--bg-primary); padding: 40px; border: 1px solid var(--accent-primary);">
-                <div class="grid grid-cols-2 gap-md" style="align-items: center; text-align: left;">
-                    <div>
-                        <h2>Technical <span style="color: var(--accent-primary);">Support</span></h2>
-                        <p>Having trouble connecting to a remote telescope or accessing your materials? Our technical team is available 24/7 for student support.</p>
-                        <div class="btn-wrapper">
-                             <a href="#" class="btn btn-primary">Open Support Portal</a>
-                             <a href="#" class="btn btn-secondary">System Status</a>
-                        </div>
-                    </div>
-                    <div style="display: flex; justify-content: flex-end;">
-                         <i data-lucide="headphones" style="width: 100px; height: 100px; color: var(--accent-primary); opacity: 0.2;"></i>
+            <div class="card support-card">
+                <div class="text-center">
+                    <h2 data-aos="fade-up">Technical <span style="color: var(--accent-primary);">Support</span></h2>
+                    <p style="max-width: 600px; margin: 0 auto 30px;" data-aos="fade-up" data-aos-delay="100">Having
+                        trouble connecting to a remote telescope or accessing your materials? Our technical team is
+                        available 24/7 for student support.</p>
+                    <div class="btn-wrapper" style="justify-content: center;" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#" class="btn btn-primary">Open Support Portal</a>
+                        <a href="#" class="btn btn-secondary">System Status</a>
                     </div>
                 </div>
             </div>
@@ -272,7 +345,8 @@
         <section class="section" style="background-color: var(--bg-secondary);">
             <div class="container text-center">
                 <h2>Media <span style="color: var(--accent-secondary);">Inquiries</span></h2>
-                <p style="max-width: 600px; margin: 0 auto 30px;">For press releases, high-res astronomical assets, or interview requests with our astronomers.</p>
+                <p style="max-width: 600px; margin: 0 auto 30px;">For press releases, high-res astronomical assets, or
+                    interview requests with our astronomers.</p>
                 <div class="btn-wrapper">
                     <a href="mailto:press@astronomyacademy.com" class="btn btn-secondary">press@astronomyacademy.com</a>
                 </div>
@@ -281,14 +355,20 @@
 
         <!-- Social Feed Section -->
         <section class="section container">
-            <h2 class="text-center" data-aos="fade-up">Live from the <span style="color: var(--accent-primary);">Cosmos</span></h2>
+            <h2 class="text-center" data-aos="fade-up">Live from the <span
+                    style="color: var(--accent-primary);">Cosmos</span></h2>
 
-            <p class="text-center" data-aos="fade-up" data-aos-delay="200">Follow our real-time captures and community highlights.</p>
+            <p class="text-center" data-aos="fade-up" data-aos-delay="200">Follow our real-time captures and community
+                highlights.</p>
             <div class="grid grid-cols-4 gap-sm" style="margin-top: 50px;">
-                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (1).jpeg" alt="Social 1" class="card-img" style="height: auto;">
-                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (2).jpeg" alt="Social 2" class="card-img" style="height: auto;">
-                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (3).jpeg" alt="Social 3" class="card-img" style="height: auto;">
-                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM.jpeg" alt="Social 4" class="card-img" style="height: auto;">
+                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (1).jpeg" alt="Social 1" class="card-img"
+                    style="height: auto;">
+                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (2).jpeg" alt="Social 2" class="card-img"
+                    style="height: auto;">
+                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM (3).jpeg" alt="Social 3" class="card-img"
+                    style="height: auto;">
+                <img src="img/WhatsApp Image 2026-04-02 at 4.10.20 PM.jpeg" alt="Social 4" class="card-img"
+                    style="height: auto;">
             </div>
             <div class="btn-wrapper" style="margin-top: 30px;">
                 <a href="#" class="btn btn-primary"><i data-lucide="instagram"></i> View Instagram Feed</a>
@@ -305,7 +385,8 @@
                         <i data-lucide="orbit"></i>
                         ASCLOGY
                     </a>
-                    <p>Discover the cosmos with expert-led training. From beginner stargazing to professional observation techniques.</p>
+                    <p>Discover the cosmos with expert-led training. From beginner stargazing to professional
+                        observation techniques.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -329,16 +410,32 @@
                     <h4>Connect</h4>
                     <div class="footer-social" style="margin-top: 20px;">
                         <a href="#" class="social-icon facebook" title="Facebook" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg"><path fill="currentColor" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg">
+                                <path fill="currentColor"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+                                </path>
+                            </svg>
                         </a>
                         <a href="#" class="social-icon instagram" title="Instagram" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg"><path fill="currentColor" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg">
+                                <path fill="currentColor"
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                                </path>
+                            </svg>
                         </a>
                         <a href="#" class="social-icon x-twitter" title="X (Twitter)" aria-label="X (Twitter)">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg">
+                                <path fill="currentColor"
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                </path>
+                            </svg>
                         </a>
                         <a href="#" class="social-icon linkedin" title="LinkedIn" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg"><path fill="currentColor" d="M4.98 3.5c0 1.381-1.119 2.5-2.5 2.5s-2.5-1.119-2.5-2.5c0-1.38 1.119-2.5 2.5-2.5s2.5 1.12 2.5 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg>
+                            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg">
+                                <path fill="currentColor"
+                                    d="M4.98 3.5c0 1.381-1.119 2.5-2.5 2.5s-2.5-1.119-2.5-2.5c0-1.38 1.119-2.5 2.5-2.5s2.5 1.12 2.5 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z">
+                                </path>
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -364,4 +461,5 @@
         });
     </script>
 </body>
+
 </html>
